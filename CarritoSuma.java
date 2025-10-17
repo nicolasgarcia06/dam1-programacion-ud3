@@ -44,19 +44,29 @@ public class CarritoSuma {
      * @return suma total en euros
      */
     public static double totalCarrito(Producto[] carrito) {
-        // TODO:
-        // 1) double total = 0;
-        // 2) for-each sobre carrito → acumula p.getPrecio()
-        // 3) return total;
+        for (double i = 0; i < carrito.length; i++) {
+            Producto producto = carrito[i];
+            producto.getPrecio();
+        }
         return 0.0;
+
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Precio de teclado");
+        double Teclado = sc.nextDouble();
+        System.out.println("precio de raton");
+        double Raton = sc.nextDouble();
+        System.out.println("precio de auriculares");
+        double Auriculares = sc.nextDouble();
         Producto[] carrito = {
-                new Producto("Teclado", 24.99),
-                new Producto("Ratón", 15.50),
-                new Producto("Auriculares", 39.90)
+                new Producto("Teclado", Teclado),
+                new Producto("Ratón", Raton),
+                new Producto("Auriculares", Auriculares)
         };
-
+        double totalCarrito = totalCarrito(carrito);
+        System.out.printf("Total: %.2f $", totalCarrito);
+        sc.close();
     }
 }
