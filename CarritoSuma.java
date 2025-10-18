@@ -1,5 +1,5 @@
 import java.util.Locale;
-import java.util.Scanner;
+
 
 public class CarritoSuma {
 
@@ -44,29 +44,24 @@ public class CarritoSuma {
      * @return suma total en euros
      */
     public static double totalCarrito(Producto[] carrito) {
-        for (double i = 0; i < carrito.length; i++) {
-            Producto producto = carrito[i];
-            producto.getPrecio();
+        double total=0;
+        for (int i = 0; i < carrito.length; i++) {
+            Producto p = carrito[i];
+            total +=p.getPrecio();
         }
-        return 0.0;
+        return total;
 
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Precio de teclado");
-        double Teclado = sc.nextDouble();
-        System.out.println("precio de raton");
-        double Raton = sc.nextDouble();
-        System.out.println("precio de auriculares");
-        double Auriculares = sc.nextDouble();
+        
         Producto[] carrito = {
-                new Producto("Teclado", Teclado),
-                new Producto("Ratón", Raton),
-                new Producto("Auriculares", Auriculares)
+                new Producto("Teclado", 24.99),
+                new Producto("Ratón", 15.50),
+                new Producto("Auriculares", 39.90)
         };
         double totalCarrito = totalCarrito(carrito);
         System.out.printf("Total: %.2f $", totalCarrito);
-        sc.close();
+        
     }
 }
