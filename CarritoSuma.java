@@ -44,7 +44,7 @@ public class CarritoSuma {
      * @return suma total en euros
      */
     public static double totalCarrito(Producto[] carrito) {
-        for (double i = 0; i < carrito.length; i++) {
+        for (int i = 0; i < carrito.length; i++) {
             Producto producto = carrito[i];
             producto.getPrecio();
         }
