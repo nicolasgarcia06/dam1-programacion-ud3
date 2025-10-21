@@ -61,7 +61,7 @@ public class ResultadosAtleti {
             suma += t.getGolesMarcados();
 
         }
-        return suma;
+        return suma / temporada.length;
     }
 
     /**
@@ -104,8 +104,8 @@ public class ResultadosAtleti {
     public static int totalGolesMarcados(Partido[] temporada) {
         int total=0;
                 for (int i = 0; i < temporada.length; i++) {
-            Partido t = temporada[i];
-                 total +=t.getGolesMarcados();
+          
+                 total +=temporada[i].getGolesMarcados();
                 }
         return total;
         }
