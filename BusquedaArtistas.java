@@ -42,7 +42,7 @@ public class BusquedaArtistas {
      */
     public static int indiceDe(Artista[] cartel, String nombreBuscado) {
         for (int i = 0; i > cartel.length; i++) {
-            if (cartel[i].getNombre().equalsIgnoreCase("nombreBuscado")) {
+            if (cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)) {
                 return i;
             }
 
@@ -61,8 +61,8 @@ public class BusquedaArtistas {
      * @return true si existe, false en caso contrario
      */
     public static boolean existe(Artista[] cartel, String nombreBuscado) {
-        for (int i = 0; i > cartel.length; i++) {
-            if (IndiceDe(cartel, nombreBuscado) == !-1) {
+        for (int i = 0; i < cartel.length; i++) {
+            if (!(indiceDe(cartel, nombreBuscado) == -1)) {
                 return true;
             }
         }
@@ -82,7 +82,13 @@ public class BusquedaArtistas {
      * @return array con índices de coincidencias
      */
     public static int[] indicesDeTodos(Artista[] cartel, String nombreBuscado) {
-        // TODO:
+        for (int i = 0; i < cartel.length; i++) {
+            cartel[i].getNombre().equalsIgnoreCase(nombreBuscado);
+                 
+int[] indices=new int[i];
+return indices;
+}
+        
         // 1) Recorre el array y cuenta cuántas coincidencias hay (equalsIgnoreCase).
         // 2) Crea un nuevo int[] del tamaño contado.
         // 3) Recorre de nuevo y rellena ese array con los índices encontrados.
@@ -100,7 +106,10 @@ public class BusquedaArtistas {
      * @return array con índices de artistas que empiezan por esa letra
      */
     public static int[] indicesPorInicial(Artista[] cartel, char inicial) {
-        // TODO:
+        Character.toLowerCase(inicial).equalsIgnoreCase(Character.toLowerCase(cartel[i].getNombre().charAt(0)));
+        cartel[i].getNombre().equalsIgnoreCase(nombreBuscado);
+        int[] indices=new int[i];
+return indices;
         // Pista: compara Character.toLowerCase(inicial) con
         // Character.toLowerCase(cartel[i].getNombre().charAt(0)).
         // Haz el mismo patrón de "contar -> crear array -> rellenar -> devolver".
