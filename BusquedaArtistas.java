@@ -61,15 +61,13 @@ public class BusquedaArtistas {
      * @return true si existe, false en caso contrario
      */
     public static boolean existe(Artista[] cartel, String nombreBuscado) {
-        for (int i = 0; i < cartel.length; i++) {
-            if (!(indiceDe(cartel, nombreBuscado) == -1)) {
-                return true;
-            }
-        }
+        
+            return indiceDe(cartel, nombreBuscado)!=-1;
+        
         // TODO:
         // Devuelve true si indiceDe(cartel, nombreBuscado) es distinto de -1.
         // En caso contrario, false.
-        return false;
+        
     }
 
     /**
@@ -82,18 +80,29 @@ public class BusquedaArtistas {
      * @return array con índices de coincidencias
      */
     public static int[] indicesDeTodos(Artista[] cartel, String nombreBuscado) {
+       int t=0;
         for (int i = 0; i < cartel.length; i++) {
-            cartel[i].getNombre().equalsIgnoreCase(nombreBuscado);
-                 
-int[] indices=new int[i];
-return indices;
+            if(cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)){
+t++;
+            }
+        } 
+int[] indices=new int[t];
+ t=0;
+for ( int i = 0; i < cartel.length; i++) {
+    if(cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)){
+        t++;
+        indices[t-1]=i;
+
+    }
 }
+return indices;
+
         
         // 1) Recorre el array y cuenta cuántas coincidencias hay (equalsIgnoreCase).
         // 2) Crea un nuevo int[] del tamaño contado.
         // 3) Recorre de nuevo y rellena ese array con los índices encontrados.
         // 4) Devuélvelo.
-        return new int[0];
+        
     }
 
     /**
@@ -105,16 +114,27 @@ return indices;
      * @param inicial letra inicial a filtrar (por ejemplo 'A' o 'q')
      * @return array con índices de artistas que empiezan por esa letra
      */
-    public static int[] indicesPorInicial(Artista[] cartel, char inicial) {
-        Character.toLowerCase(inicial).equalsIgnoreCase(Character.toLowerCase(cartel[i].getNombre().charAt(0)));
-        cartel[i].getNombre().equalsIgnoreCase(nombreBuscado);
-        int[] indices=new int[i];
-return indices;
+            public static int[] indicesPorInicial(Artista[] cartel, char inicial) {
+    int contador = 0;
+    for (int i = 0; i < cartel.length; i++) {
+        if (cartel[i].getNombre().charAt(0)==inicial) {
+            contador++;
+        }
+    }
+    int[] indices = new int[contador];
+    int j=0;
+    for (int i = 0; i < cartel.length; i++) {
+        if (cartel[i].getNombre().charAt(0)==inicial) {
+            indices[j++] = i;
+        }
+    }
+    return indices;
+}
         // Pista: compara Character.toLowerCase(inicial) con
         // Character.toLowerCase(cartel[i].getNombre().charAt(0)).
         // Haz el mismo patrón de "contar -> crear array -> rellenar -> devolver".
-        return new int[0];
-    }
+        
+    
 
     /**
      * Devuelve los índices de artistas cuyo nombre empieza por 'inicial' (ignora
@@ -141,6 +161,10 @@ return indices;
      * Si el array de índices está vacío, no imprime nada.
      */
     public static void mostrarArtistas(Artista[] cartel, int[] indices) {
+        for (int idx : indices){
+            System.out.println(" - [" + idx + "] " + cartel[idx]);
+        }
+        
         // TODO:
         // Recorre 'indices' y para cada 'idx' imprime:
         // System.out.println(" - [" + idx + "] " + cartel[idx]);
