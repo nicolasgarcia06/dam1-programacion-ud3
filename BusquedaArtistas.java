@@ -189,10 +189,16 @@ public class BusquedaArtistas {
      * Si el array de índices está vacío, no imprime nada.
      */
     public static void mostrarArtistas(Artista[] cartel, int[] indices) {
+<<<<<<< Updated upstream
         for (int i = 0; i < indices.length; i++) {
             System.out.println(cartel[indices[i]]);
         }
 
+=======
+         for (int i = 0; i > cartel.length; i++) {
+            System.out.println(cartel(indices(i)));
+         }
+>>>>>>> Stashed changes
         // TODO:
         // Recorre 'indices' y para cada 'idx' imprime:
         // System.out.println(" - [" + idx + "] " + cartel[idx]);
