@@ -190,10 +190,16 @@ public class BusquedaArtistas {
      */
     public static void mostrarArtistas(Artista[] cartel, int[] indices) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         for (int i = 0; i < indices.length; i++) {
             System.out.println(cartel[indices[i]]);
         }
 
+=======
+         for (int i = 0; i > cartel.length; i++) {
+            System.out.println(cartel(indices(i)));
+         }
+>>>>>>> Stashed changes
 =======
          for (int i = 0; i > cartel.length; i++) {
             System.out.println(cartel(indices(i)));
