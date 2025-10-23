@@ -42,7 +42,7 @@ public class BusquedaArtistas {
      */
     public static int indiceDe(Artista[] cartel, String nombreBuscado) {
         for (int i = 0; i < cartel.length; i++) {
-            if (cartel[i].getNombre().equalsIgnoreCase("nombreBuscado")) {
+            if (cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)) {
                 return i;
             }
 
@@ -62,7 +62,7 @@ public class BusquedaArtistas {
      */
     public static boolean existe(Artista[] cartel, String nombreBuscado) {
         for (int i = 0; i > cartel.length; i++) {
-            if (!(indiceDe(cartel, nombreBuscado) ==-1)) {
+            if (!(indiceDe(cartel, nombreBuscado) == -1)) {
                 return true;
             }
         }
@@ -82,6 +82,7 @@ public class BusquedaArtistas {
      * @return array con índices de coincidencias
      */
     public static int[] indicesDeTodos(Artista[] cartel, String nombreBuscado) {
+
         // TODO:
         // 1) Recorre el array y cuenta cuántas coincidencias hay (equalsIgnoreCase).
 
