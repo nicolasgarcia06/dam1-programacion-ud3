@@ -6,7 +6,7 @@ public class CopiasArrays {
     static String[] copiarManual(String[] origen) {
         String[] copia = new String[origen.length];
         for (int i = 0; i < origen.length; i++) {
-            origen[i] = copia[i];
+            copia[i]=origen[i];
         }
         return copia;
     }
@@ -17,7 +17,7 @@ public class CopiasArrays {
     static String[] aMayusculas(String[] origen) {
         String[] copia = new String[origen.length];
         for (int i = 0; i < origen.length; i++) {
-            copia[i]=origen[i].toUpperCase();
+            copia[i]= origen[i].toUpperCase();
 
         }
         return copia;
@@ -25,7 +25,7 @@ public class CopiasArrays {
 
     /** clone()->array: copia igual, mismo tamaño. */
     static String[] copiarConClone(String[] origen) {
-        return origen.clone();
+                    return origen.clone();
     }
 
     /**
@@ -38,8 +38,13 @@ public class CopiasArrays {
 
     /** Arrays.copyOfRange(array, from, to) -> subarray (to exclusivo). */
     static String[] subarray(String[] origen, int from, int to) {
+        
+        from = Math.max(0, from);
+to   = Math.min(origen.length, to);
+if (from > to) from = to;
+return Arrays.copyOfRange(origen, from, to);
         // Comprobar que from no puede ser menor que 0 y si lo es poner 0
-        return null;
+        
     }
 
     static void assertArray(String msg, String[] esperado, String[] real) {

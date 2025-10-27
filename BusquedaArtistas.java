@@ -155,9 +155,7 @@ public class BusquedaArtistas {
             int minSeguidoresMiles, int maxSeguidoresMiles) {
         int t = 0;
         for (int i = 0; i < cartel.length; i++) {
-            if (artista.getNombre().charAt(0) == inicial &&
-                    artista.getSeguidoresMiles() > minSeguidoresMiles &&
-                    artista.getSeguidoresMiles() < maxSeguidoresMiles) {
+            if (artista.getNombre().charAt(0) == inicial && artista.getSeguidoresMiles() > minSeguidoresMiles && artista.getSeguidoresMiles() < maxSeguidoresMiles) {
                 t++;
             }
 
