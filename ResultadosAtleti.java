@@ -57,8 +57,8 @@ public class ResultadosAtleti {
     public static double mediaGolesMarcados(Partido[] temporada) {
         int suma = 0;
         for (int i = 0; i < temporada.length; i++) {
-            Partido t = temporada[i];
-            suma += t.getGolesMarcados();
+            
+            suma += temporada[i].getGolesMarcados();
 
         }
         return suma / temporada.length;
@@ -74,7 +74,7 @@ public class ResultadosAtleti {
         Partido mejor=temporada[0];
         for (int i = 1; i < temporada.length; i++) {
             if(temporada[i].getGolesMarcados() > mejor.getGolesMarcados()){}
-        mejor=temporada[1];
+        mejor=temporada[i];
     }
     return mejor;
     }
