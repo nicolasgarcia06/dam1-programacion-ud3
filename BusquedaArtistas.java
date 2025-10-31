@@ -155,7 +155,7 @@ public class BusquedaArtistas {
             int minSeguidoresMiles, int maxSeguidoresMiles) {
         int t = 0;
         for (int i = 0; i < cartel.length; i++) {
-            if (artista.getNombre().charAt(0) == inicial && artista.getSeguidoresMiles() > minSeguidoresMiles && artista.getSeguidoresMiles() < maxSeguidoresMiles) {
+            if (cartel[i].getNombre().charAt(0) == inicial && cartel[i].getSeguidoresMiles() >= minSeguidoresMiles && cartel[i].getSeguidoresMiles() <= maxSeguidoresMiles) {
                 t++;
             }
 
@@ -163,8 +163,8 @@ public class BusquedaArtistas {
         int indice[] = new int[t];
         t = 0;
         for (int i = 0; i < indice.length; i++) {
-            if (artista.getNombre().charAt(0) == inicial && artista.getSeguidoresMiles() > minSeguidoresMiles
-                    && artista.getSeguidoresMiles() < maxSeguidoresMiles) {
+            if (cartel[i].getNombre().charAt(0) == inicial && cartel[i].getSeguidoresMiles() > minSeguidoresMiles
+                    && cartel[i].getSeguidoresMiles() < maxSeguidoresMiles) {
                 t++;
                 indice[t - 1] = i;
             }
