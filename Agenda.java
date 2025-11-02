@@ -28,7 +28,7 @@ public class Agenda {
      */
     public static int buscarNombreParcial(Contacto[] a, String prefijo) {
         // TODO
-        for(i=0; i<a.length; i++){
+        for(int i=0; i<a.length; i++){
             if(a[i].getNombre().startsWith(prefijo)){
                 return i;
             }
@@ -42,14 +42,14 @@ public class Agenda {
      */
     public static Contacto[] soloFavoritos(Contacto[] a) {
         int t=0;
-        for(i=0; i<a.length; i++){
+        for(int i=0; i<a.length; i++){
             if(a[i].isFavorito()){
                 t++;
             }
         }
         Contacto[] indice=new Contacto[t];
         t=0;
-        for(i=0; i<a.length; i++){
+        for(int i=0; i<a.length; i++){
             if(a[i].isFavorito()){
                 indice[t]=a[i];
                 t++;
@@ -65,12 +65,12 @@ public class Agenda {
      */
     public static Contacto[] telefonosNormalizados(Contacto[] a) {
         Contacto[] indice =new Contacto[a.length];
-        for(i=0; i<a.length; i++){
+        for(int i=0; i<a.length; i++){
             boolean fav=a[i].isFavorito();
             String telefono=a[i].getTelefono().replace(" ","");
             String nombre=a[i].getNombre();
             String email=a[i].getEmail();
-            indice[i]=new Contacto(fav,nombre,email,telefono);
+            indice[i]=new Contacto(nombre,email,telefono,fav);
         }
      
         return indice;

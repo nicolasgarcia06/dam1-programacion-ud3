@@ -29,7 +29,7 @@ public class Biblioteca {
      * Recorre el array por índice o for-each y haz System.out.println(libro).
      */
     public static void listar(Libro[] cat) {
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             System.out.println(cat[i].toString());
         }
         // TODO
@@ -40,7 +40,7 @@ public class Biblioteca {
      * Si no existe, devuelve -1.
      */
     public static int buscarTitulo(Libro[] cat, String texto) {
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             if(cat[i].getTitulo().equalsIgnoreCase(texto)){
                 return i;
             }
@@ -56,14 +56,14 @@ public class Biblioteca {
      */
     public static Libro[] soloDisponibles(Libro[] cat) {
         int t=0;
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             if(cat[i].getEjemplares()>0){
                 t++;
             }
         }
         Libro[] indice=new Libro[t];
         t=0;
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             if(cat[i].getEjemplares()>0){
                 indice[t]=cat[i];
                 t++;
@@ -82,7 +82,7 @@ return indice;
      */
     public static double paginasHabituales(Libro[] cat) {
         double suma=0.0;
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             suma +=cat[i].getPaginas();
             return suma/cat.length;
         }
@@ -97,9 +97,10 @@ return indice;
      */
     public static int indiceMasLargo(Libro[] cat) {
         int masLargo=0;
-        for(i=1; i<cat.length; i++){
+        for(int i=1; i<cat.length; i++){
             if(cat[i].getPaginas()>cat[masLargo].getPaginas()){
                 masLargo=i;
+                return masLargo;
             }
         }
         // TODO

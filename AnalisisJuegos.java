@@ -36,7 +36,7 @@ public class AnalisisJuegos {
     /** Cuenta cuántos juegos tienen más jugadores que el umbral dado. */
     public static int contarMasJugadores(Juego[] biblioteca, int umbralMiles) {
         int t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (biblioteca[i].getJugadoresMiles() > umbralMiles) {
                 t++;
             }
@@ -52,7 +52,7 @@ public class AnalisisJuegos {
     /** Cuenta cuántos juegos tienen menos jugadores que el umbral dado. */
     public static int contarMenosJugadores(Juego[] biblioteca, int umbralMiles) {
         int t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (biblioteca[i].getJugadoresMiles() < umbralMiles) {
                 t++;
             }
@@ -64,7 +64,7 @@ public class AnalisisJuegos {
     /** Cuenta cuántos juegos están en el rango [minMiles, maxMiles] (INCLUSIVO). */
     public static int contarJugadoresEnRango(Juego[] biblioteca, int minMiles, int maxMiles) {
         int t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (minMiles <= biblioteca[i].getJugadoresMiles() <= maxMiles) {
                 t++;
             }
@@ -82,14 +82,14 @@ public class AnalisisJuegos {
      */
     public static int[] indicesJugadoresEnRango(Juego[] biblioteca, int minMiles, int maxMiles) {
         int t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (minMiles <= biblioteca[i].getJugadoresMiles() && biblioteca[i].getJugadoresMiles() <= maxMiles) {
                 t++;
             }
         }
         Juego[] indice = new Juego[t];
         t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (minMiles <= biblioteca[i].getJugadoresMiles() && biblioteca[i].getJugadoresMiles() <= maxMiles) {
                 indice[t] = biblioteca[i];
                 t++;
@@ -109,14 +109,14 @@ public class AnalisisJuegos {
      */
     public static int[] indicesPorInicial(Juego[] biblioteca, char inicial) {
         int t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (Character.toLowerCase(inicial) == Character.toLowerCase(biblioteca[i].getNombre().charAt(0))) {
                 t++;
             }
         }
         Juego[] indice = new Juego[t];
         t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (Character.toLowerCase(inicial) == Character.toLowerCase(biblioteca[i].getNombre().charAt(0))) {
                 indice[t] = biblioteca[i];
                 t++;
@@ -136,7 +136,7 @@ public class AnalisisJuegos {
     public static int[] indicesPorInicialYJugadores(Juego[] biblioteca, char inicial,
             int minMiles, int maxMiles) {
 int t=0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (Character.toLowerCase(inicial) == Character.toLowerCase(biblioteca[i].getNombre().charAt(0))
                     && minMiles <= biblioteca[i].getJugadoresMiles()
                     && biblioteca[i].getJugadoresMiles() <= maxMiles) {
@@ -145,7 +145,7 @@ int t=0;
         }
         Juego[] indice = new Juego[t];
         t = 0;
-        for (i = 0; i < biblioteca.length; i++) {
+        for (int i = 0; i < biblioteca.length; i++) {
             if (Character.toLowerCase(inicial) == Character.toLowerCase(biblioteca[i].getNombre().charAt(0))
                     && minMiles <= biblioteca[i].getJugadoresMiles()
                     && biblioteca[i].getJugadoresMiles() <= maxMiles) {
@@ -161,7 +161,7 @@ int t=0;
 
     /** Imprime por pantalla los juegos indicados por sus índices. */
     public static void mostrarJuegos(Juego[] biblioteca, int[] indices) {
-        for (i = 0; i < indices.length; i++) {
+        for (int i = 0; i < indices.length; i++) {
             int idx = indices[i];
             System.out.println(" - [" + idx + "] " + biblioteca[idx]);
         }

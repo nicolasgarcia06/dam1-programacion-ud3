@@ -23,7 +23,7 @@ public class Meteorologia {
      * Muestra toda la serie: una lectura por línea usando toString().
      */
     public static void listar(Lectura[] l) {
-        for(i=0; i<l.length; i++){
+        for(int i=0; i<l.length; i++){
             System.out.println(l[i].toString());
         }
 
@@ -35,7 +35,7 @@ public class Meteorologia {
      * Si no existe, -1.
      */
     public static int buscarDia(Lectura[] l, String dia) {
-        for(i=0; i<l.length; i++){
+        for(int i=0; i<l.length; i++){
             if(l[i].getDia().equalsIgnoreCase(dia)){
                 return i;
             }
@@ -51,14 +51,14 @@ public class Meteorologia {
      */
     public static Lectura[] diasCalurosos(Lectura[] l, int umbralMax) {
         int t=0;
-        for(i=0; i<l.length; i++){
+        for(int i=0; i<l.length; i++){
             if(l[i].getMax()>=umbralMax){
                 t++;
             }
         }
         Lectura[] indice=new Lectura[t];
         t=0;
-        for(i=0; i<l.length; i++){
+        for(int i=0; i<l.length; i++){
             if(l[i].getMax()>=umbralMax){
                 indice[t]=l[i];
                 t++;
@@ -75,7 +75,7 @@ public class Meteorologia {
      */
     public static double temperaturaTipicaPeriodo(Lectura[] l) {
         double suma=0.0;
-        for(i=0; i<l.length; i++){
+        for(int i=0; i<l.length; i++){
             suma += (l[i].getMax()+l[i].getMin())/2.0;
         }
 
@@ -89,9 +89,10 @@ public class Meteorologia {
      */
     public static int indiceMayorAmplitud(Lectura[] l) {
         int mayorAmp=0;
-        for(i=1; i<l.length; i++){
+        for(int i=1; i<l.length; i++){
             if((l[i].getMax()-l[i].getMin())>(l[mayorAmp].getMax()-l[mayorAmp].getMin())){
                 mayorAmp=i;
+                return mayorAmp;
             }
         }
         // TODO

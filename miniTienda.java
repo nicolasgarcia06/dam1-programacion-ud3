@@ -61,7 +61,7 @@ public class MiniTienda {
     public static Producto[] filtrarPorPresupuesto(Producto[] cat, double limite) {
         // TODO
         int t=0;
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             if(cat[i].getPrecio<=limite){
 t++;
             }
