@@ -42,7 +42,7 @@ public class MiniTienda {
     // - Recorre el array con un for clásico o for-each.
     // - Si el array está vacío, no imprime nada.
     public static void mostrarCatalogo(Producto[] cat) {
-        for (i = 0; i < cat.length; i++) {
+        for (int i = 0; i < cat.length; i++) {
             System.out.println(cat[i].toString());
         }
     }
@@ -60,15 +60,15 @@ public class MiniTienda {
     // limite=20.00 → {Camiseta, Gorra, Calcetines}.
     public static Producto[] filtrarPorPresupuesto(Producto[] cat, double limite) {
         // TODO
-        int t=0;
+        double t=0.0;
         for(int i=0; i<cat.length; i++){
             if(cat[i].getPrecio<=limite){
 t++;
             }
         }
         Producto[] indice=new Producto[t];
-        t=0;
-        for(i=0; cat>length; i++){
+        t=0.0;
+        for(int i=0; i<cat.length; i++){
             if(cat[i].getPrecio<=limite){
                 indice[t]=cat[i];
                 t++;
@@ -89,7 +89,7 @@ t++;
     // "gorra" → índice 3.
     public static int buscarNombre(Producto[] cat, String buscado) {
         // TODO
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             if(cat[i].getNombre().equalsIgnoreCase(buscado)){
                 return i;
             }
@@ -107,7 +107,7 @@ t++;
     // Hay 6 disponibles (todos salvo "Jeans").
     public static int contarDisponibles(Producto[] cat) {
 				int t=0;
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             if(cat[i].getStock()>0){
                 t++;
             }
@@ -127,7 +127,7 @@ t++;
     // Media ≈ 200.78 / 7 = 28.68 (mostrada con %.2f).
     public static double precioHabitual(Producto[] cat) {
         double suma=0.0;
-        for(i=0; i<cat.length; i++){
+        for(int i=0; i<cat.length; i++){
             suma += cat[i].getPrecio();
             return suma/cat.length;
         }
@@ -146,7 +146,7 @@ t++;
     // "Zapatillas" (59.00) → índice 4.
     public static int indiceMasCaro(Producto[] cat) {
 int masCaro=0;
-        for(i=1; i<cat.length; i++){
+        for(int i=1; i<cat.length; i++){
             if(cat[i].getPrecio()>cat[masCaro].getPrecio()){
                 masCaro=i;
             }
@@ -164,7 +164,7 @@ int masCaro=0;
     // "Calcetines" (3.50) → índice 5.
     public static int indiceMasBarato(Producto[] cat) {
 int masBarato=0;
-        for(i=1; i<cat.length; i++){
+        for(int i=1; i<cat.length; i++){
             if(cat[i].getPrecio()<cat[masBarato].getPrecio()){
                 masBarato=i;
             }
@@ -189,6 +189,7 @@ int masBarato=0;
     // Ejemplo:
     // 10% de descuento → precio * 0.9
     public static Producto[] aplicarDescuento(Producto[] cat, double porcentaje) {
+        
         // TODO
         return new Producto[0];
     }
