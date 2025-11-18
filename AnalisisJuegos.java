@@ -58,14 +58,14 @@ public class AnalisisJuegos {
             }
         }
         // TODO: igual que el anterior pero con '<'
-        return 0;
+        return t;
     }
 
     /** Cuenta cuántos juegos están en el rango [minMiles, maxMiles] (INCLUSIVO). */
     public static int contarJugadoresEnRango(Juego[] biblioteca, int minMiles, int maxMiles) {
         int t = 0;
         for (int i = 0; i < biblioteca.length; i++) {
-            if (minMiles <= biblioteca[i].getJugadoresMiles() <= maxMiles) {
+            if (minMiles<=biblioteca[i].getJugadoresMiles() && maxMiles>=biblioteca[i].getJugadoresMiles()) {
                 t++;
             }
 

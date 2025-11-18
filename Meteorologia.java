@@ -77,10 +77,11 @@ public class Meteorologia {
         double suma=0.0;
         for(int i=0; i<l.length; i++){
             suma += (l[i].getMax()+l[i].getMin())/2.0;
+            return suma/l.length;
         }
 
         // TODO
-        return suma/l.length;
+        return 0.0;
     }
 
     /**
