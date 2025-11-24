@@ -14,8 +14,8 @@ public class OperacionesMatrices {
         int[][] Csum = suma(A, B);
         int[][] Crest = resta(A, B);
         int[][] Cmul = productoElemento(A, B);
-        int[][] Cmax = maximos(A, B);
-        int[][] Ccmp = comparativa(A, B);
+        
+        
         double[][] Cavg = medias(A, B);
 
         System.out.println("Suma:");
@@ -25,9 +25,9 @@ public class OperacionesMatrices {
         System.out.println("Producto elemento:");
         imprimir(Cmul);
         System.out.println("Maximos:");
-        imprimir(Cmax);
+    
         System.out.println("Comparativa (-1,0,1):");
-        imprimir(Ccmp);
+        
         System.out.println("Medias:");
         imprimir(Cavg);
     }
@@ -53,6 +53,7 @@ public class OperacionesMatrices {
     }
     static int[][] productoElemento(int[][] A, int[][] B){ 
      int resultado[][]=new int[A.length][A[0].length];
+     
         for(int i=0;i<A.length;i++){
             for(int j=0;j<A[0].length;j++){
                 resultado[i][j]=A[i][j] * B[i][j];
@@ -60,12 +61,7 @@ public class OperacionesMatrices {
         }
 	    return resultado;
     }
-    static int[][] maximos(int[][] A, int[][] B){ 
     
-    }
-    static int[][] comparativa(int[][] A, int[][] B){ 
-    
-    }
     static double[][] medias(int[][] A, int[][] B){
     double resultado[][]=new double[A.length][A[0].length];
         for(int i=0;i<A.length;i++){

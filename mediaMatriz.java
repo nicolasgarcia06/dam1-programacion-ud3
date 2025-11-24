@@ -11,14 +11,14 @@ double[] media = new double[m.length];
         return media;
 }
 }
-public static void MediaMasAlta(double [] media){
-    double mejor=0.0;
+public static void MediaMasAlta(int [] media){
+    int mejor=0;
     for (int i = 1; i < media.length; i++) {
         if(media[i]>media[mejor]){
             mejor=media[i];
         }
 }
- System.out.printf("El alumno nº %d tiene la mejor nota media: %.2f",mejorNotaIndice,notasAlumnos[mejorNotaIndice]);
+ System.out.printf("El alumno nº %d tiene la mejor nota media: %.2f",mejor);
 }
 public static void main(String[] args) {
     int[][] notas = new int[][]{
@@ -28,7 +28,7 @@ public static void main(String[] args) {
             {7,7,5},
     };
 double[] notasMediasAlumnos=MediaFila(notas);
-MediaMasAlta(notasMediasAlumnos);
+MediaMasAlta(notas);
 
 
 }
